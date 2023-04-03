@@ -1,0 +1,30 @@
+body {
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.515);
+    color: white;
+    width: 20rem;
+} 
+
+.contenedor form {
+    display: grid;
+    padding: 1rem;
+}
+
+.contenedor input {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    height: 3rem;
+}
+
+a {
+    color: yellow;
+}
