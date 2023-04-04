@@ -1,11 +1,15 @@
 {{#> plantilla}}
 <section class="contenedor">
     <form action="/register"  method="post">
-        <h1>{{msge}}</h1>
+        <h1>Lista Usuario</h1>
+        <ul>
+            {{#each resultado}}
+            <li>{{email}}</li>
+            {{/each}}
+        </ul>
         <div><hr></div>
         <a href="/">Iniciar Sesion</a>
         <a href="/register">Registrarse</a>
-        <a href="/usuarios">Ver todos los usuarios</a>
     </form>
-</section>    
+</section>
 {{/plantilla}}

@@ -48,6 +48,15 @@ app.post("/register", async (req, res) => {
     }
 })
 
+app.get("/usuarios", async (req, res) => {
+    try {
+        const resultado = await fn.usuarios()
+        res.render("usuarios", {resultado});
+    } catch (e) {
+        res.render("msge", {msge: e});
+    }
+})
+
 app.get("*", (req, res) => {
     res.redirect("/");
 })

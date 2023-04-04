@@ -13,6 +13,10 @@ export default class PostreSQL {
         this.#sql = "INSERT INTO usuario (email, password) VALUES ($1, $2) RETURNING email"
         return getData(this.#sql, [obj.correo, obj.clave]);
     }
+    pgUsuarios() {
+        this.#sql = "SELECT email FROM usuario"
+        return getData(this.#sql, []);
+    }
 };
 
 const pool = new Pool({
