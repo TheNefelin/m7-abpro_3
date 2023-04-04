@@ -25,8 +25,6 @@ export async function register(obj) {
 
     const res = await sql.pgRegister(obj);
 
-console.log(res)
-
     if ("email" in res[0]) {
         return {isOK : true, msge: "Usuario registrado correctamente"}
     } else {
