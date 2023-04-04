@@ -21,8 +21,13 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
     try {
         const resultado = await fn.login(req.body)
+        if (resultado.isOK) {
+            res.render("msge", {msge: "Has ingresado correctamente"});    
+        } else {
+            res.render("msge", {msge: resultado.msge});
+        }
     } catch (e) {
-        fn.login(req.body)
+        res.render("msge", {msge: e});
     }
 })
 
@@ -30,8 +35,17 @@ app.get("/register", (req, res) => {
     res.render("register");
 })
 
-app.post("/register", (req, res) => {
-    console.log(req.body)
+app.post("/register", async (req, res) => {
+    try {
+        const resultado = await fn.register(req.body)
+        if (resultado.isOK) {
+            res.render("msge", {msge: "Te has registrado correctamente"});  
+        } else {
+            res.render("msge", {msge: resultado.msge});
+        }
+    } catch (e) {
+        res.render("msge", {msge: e});
+    }
 })
 
 app.get("*", (req, res) => {
