@@ -21,7 +21,7 @@ export default class PostreSQL {
 
 const pool = new Pool({
     user: "postgres",
-    password: "!nfra48x",
+    password: "123456",
     database: "softlife",
     host: "localhost"
 });
